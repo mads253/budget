@@ -1,0 +1,137 @@
+/* App.css */
+.app {
+  display: flex;
+  flex-direction: column; /* Stack everything vertically */
+  justify-content: center;
+  align-items: center;
+  height: 200vh;
+  background-color: #98ff98; /* Mint green background */
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.progress-circle-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
+  width: 100%; /* Ensure it's centered */
+}
+
+.circle-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap; /* Allow categories to wrap if needed */
+  gap: 30px; /* Space between circles */
+  width: 100%; /* Full width */
+  margin-bottom: 40px;
+}
+
+.circle {
+  transform: rotate(90deg); /* Make progress start from the top */
+  margin: 10px;
+  width: 20vw; /* Set circle size based on viewport width */
+  height: 20vw; /* Make the height equal to width for a perfect circle */
+  max-width: 120px; /* Prevent excessive scaling */
+  max-height: 120px; /* Prevent excessive scaling */
+}
+
+.circle-background {
+  fill: none;
+  stroke: #f3f3f3;
+}
+
+.circle-progress {
+  transition: stroke-dashoffset 0.5s ease;
+}
+
+.progress-text {
+  font-size: 4vw; /* Adjust text size based on viewport */
+  font-weight: bold;
+  margin-top: -15px;
+}
+
+.category-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 20vw; /* Dynamically size category container */
+  max-width: 150px; /* Maximum width */
+}
+
+.category-name {
+  font-weight: bold;
+  margin-bottom: 10px;
+  font-size: 2vw; /* Dynamically sized category name */
+}
+
+.category-spent {
+  font-size: 1.5vw; /* Dynamically sized spent amount */
+  margin-top: 5px;
+}
+
+.category-input {
+  margin-top: 10px;
+}
+
+.category-input input {
+  width: 80px;
+  padding: 5px;
+  font-size: 14px;
+}
+
+.expense-input {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.expense-input input,
+.expense-input select {
+  margin-right: 10px;
+  padding: 5px;
+  font-size: 16px;
+}
+
+.expense-input button {
+  padding: 5px 10px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: deepskyblue;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.expense-input button:hover {
+  background-color: dodgerblue;
+}
+
+/* Media Query for Smaller Screens (mobile) */
+@media (max-width: 600px) {
+  .circle {
+    width: 40vw; /* Make circles larger for small screens */
+    height: 40vw;
+  }
+
+  .progress-text {
+    font-size: 6vw; /* Larger progress text on small screens */
+  }
+
+  .category-name {
+    font-size: 3vw;
+  }
+
+  .category-spent {
+    font-size: 2.5vw;
+  }
+
+  .category-container {
+    width: 40vw; /* Adjust category container width */
+    max-width: 200px;
+  }
+}
